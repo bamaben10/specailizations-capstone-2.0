@@ -1,0 +1,16 @@
+.header-container {
+    padding-left: 8rem;
+    padding-right: 8rem;
+    /* display: flex; 
+    justify-content: flex-start; 
+    align-items: center;  */
+}
+
+.header-card {
+    font-size: 3rem;
+    line-height: 1;
+    /* display: flex; 
+    justify-content: flex-start; 
+    align-items: center;   */
+}
+

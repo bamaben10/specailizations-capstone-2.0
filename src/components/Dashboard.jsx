@@ -1,12 +1,14 @@
 import React from "react";
 import Card from "./Card";
+import { mockCompanyDetails } from "../constants/mock";
 import "./Dashboard.css";
+import Header from "./Header";
 
 const Dashboard = () => {
   return (
     <div className="chart">
       <div className="header-card">
-        <Card>Header</Card>
+        <Header name={mockCompanyDetails.name} />
       </div>
       <div className="main">
         <div className="chart-card">
