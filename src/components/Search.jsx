@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { mockSearchResults } from "../constants/mock";
 import "./Search.css";
 import { XIcon, SearchIcon } from "@heroicons/react/solid";
+import SearchResults from "./SearchResults";
 
 const Search = () => {
   const [input, setInput] = useState(""); //this input will track the user query (what company/stock they are looking for)
@@ -40,6 +41,10 @@ const Search = () => {
       <button onClick={updateBestMatches} className="search-icon-1">
         <SearchIcon className="search-icon" />
       </button>
+
+      {/* {input && bestMatches.length > 0 ? (
+        <SearchResults results={bestMatches} />
+      ) : null} */}
     </div>
   );
 };
