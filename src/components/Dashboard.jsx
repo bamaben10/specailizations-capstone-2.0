@@ -1,10 +1,11 @@
 import React from "react";
-import Card from "./Card";
+// import Card from "./Card";
 import { mockCompanyDetails } from "../constants/mock";
 import "./Dashboard.css";
 import Header from "./Header";
 import Details from "./Details";
 import Overview from "./Overview";
+import Chart from "./Chart";
 
 const Dashboard = () => {
   return (
@@ -14,7 +15,7 @@ const Dashboard = () => {
       </div>
       <div className="main">
         <div className="chart-card">
-          <Card>Chart</Card>
+          <Chart />
         </div>
         <div className="right">
           <div className="overview-card">
@@ -29,9 +30,7 @@ const Dashboard = () => {
           <div className="details-card">
             <Details details={mockCompanyDetails} />
           </div>
-          <div className="news-card">
-            <Card>News</Card>
-          </div>
+          <div className="news-card">{/* <Card>News</Card> */}</div>
         </div>
       </div>
     </div>

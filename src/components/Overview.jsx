@@ -3,6 +3,7 @@ import Card from "./Card";
 import "./Overview.css";
 
 const Overview = ({ symbol, price, change, changePercent, currency }) => {
+  // console.log(symbol);
   return (
     <Card>
       <span className="overview-info">
