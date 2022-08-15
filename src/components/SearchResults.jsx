@@ -1,6 +1,6 @@
 import React from "react";
 
-const SearchResults = (results) => {
+const SearchResults = ({ results }) => {
   return (
     <ul className="search-options" custom-scrollbar>
       {results.map((item) => {
