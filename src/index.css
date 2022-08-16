@@ -10,15 +10,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+   
 @tailwind base; 
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .custom-scrollbar::-webkit-scrollbar {
+ 
+  /* @layer components { 
+   .custom-scrollbar::-webkit-scrollbar {
     width: 4px;
-  }
+  } 
 
   .custom-scrollbar::-webkit-scrollbar-track {
     background: transparent;
@@ -31,7 +32,7 @@ code {
   } 
 
   .custom-scrollbar-dark::-webkit-scrollbar-thumb {
-    background-color: #312e81;
-  } 
-}    
-
+    background-color: #312e81; 
+  }    
+}       
+     */

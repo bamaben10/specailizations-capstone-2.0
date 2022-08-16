@@ -6,9 +6,17 @@
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
 }
 
+[dark-them='dark'] {
+    background-color: gray;
+}
+
 .moon-btn {
     width: 2rem; 
     height: 2rem; 
     cursor: pointer; 
     stroke-width: 1; 
+}
+
+[dark-theme='dark'] {
+    background-color: yellow;
 }

@@ -8,7 +8,10 @@
     border-radius: 0.375rem; 
     border-width: 1px; 
     border-width: 2px;
-    custom: scrollbar;
+}
+
+[dark-theme='dark'] {
+    background-color: gray;
 }
 
 .drop-down {
@@ -20,4 +23,8 @@
     align-items: center; 
     border-radius: 0.375rem; 
     cursor: pointer; 
+}
+
+[dark-theme='dark'] {
+    background-color: indigo;
 }

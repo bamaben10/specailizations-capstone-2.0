@@ -1,10 +1,19 @@
 import React from "react";
 import "./ChartFilter.css";
-import { chartConfig } from "../constants/config";
 
 const ChartFilter = ({ text, active, onClick }) => {
-  // console.log(onClick)
-  return <button onClick={onClick} className="filter-btn"></button>;
+  return (
+    <button
+      onClick={onClick}
+      className={`${
+        active
+          ? "bg-indigo-600 border-indigo-700 text-gray-100"
+          : "border-indigo-300 text-indigo-300"
+      }`}
+    >
+      {text}
+    </button>
+  );
 };
 
 export default ChartFilter;

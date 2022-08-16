@@ -1,24 +1,48 @@
-import React, { useState, useContext } from "react";
-import { mockSearchResults } from "../constants/mock";
+import React, { useState, useContext, useEffect } from "react";
 import "./Search.css";
 import { XIcon, SearchIcon } from "@heroicons/react/solid";
 import SearchResults from "./SearchResults";
 import ThemeContext from "../context/ThemeContext";
+import { searchSymbols, fetchStockSymbols, fetchQuote } from "../api/stock-api";
 
 const Search = () => {
   const [input, setInput] = useState(""); //this input will track the user query (what company/stock they are looking for)
-  const [bestMatches, setBestMatches] = useState(mockSearchResults.result);
+  const [bestMatches, setBestMatches] = useState({});
+  const [stock, setStock] = useState({});
 
   const { darkMode } = useContext(ThemeContext);
+  useEffect(() => {
+    getStockQuote();
+  }, [bestMatches]);
 
   const clear = () => {
     setInput("");
     setBestMatches([]);
   };
 
-  const updateBestMatches = () => {
-    setBestMatches(mockSearchResults.result);
+  const updateBestMatches = async () => {
+    try {
+      if (input) {
+        const searchResults = await searchSymbols(input);
+        // const result = searchResults;
+        await setBestMatches(searchResults[0]);
+      }
+    } catch (error) {
+      setBestMatches([]);
+      console.log(error);
+    }
   };
+
+  const getStockQuote = async () => {
+    const result = await fetchQuote(bestMatches);
+    await setStock(result);
+  };
+  // const stockData = async () => {
+  //   await updateBestMatches();
+  //   await getStockQuote();
+  // };
+  console.log(stock);
+
   return (
     <div className="search-container">
       <input
@@ -41,13 +65,13 @@ const Search = () => {
         </button>
       )}
 
-      <button onClick={updateBestMatches} className="search-icon-1">
+      <button onClick={() => updateBestMatches()} className="search-icon-1">
         <SearchIcon className="search-icon" />
       </button>
 
-      {input && bestMatches.length > 0 ? (
+      {/* {input && bestMatches.length > 0 ? (
         <SearchResults results={bestMatches} />
-      ) : null}
+      ) : null} */}
     </div>
   );
 };

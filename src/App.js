@@ -3,12 +3,16 @@ import "./App.css";
 // import Card from "./components/Card";
 import Dashboard from "./components/Dashboard";
 import ThemeContext from "./context/ThemeContext";
+import StockContext from "./context/StockContext";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
+  const [stockSymbol, setStockSymbol] = useState("TSLA");
   return (
     <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
-      <Dashboard />
+      <StockContext.Provider value={{ stockSymbol, setStockSymbol }}>
+        <Dashboard />
+      </StockContext.Provider>
       {/* <App /> */}
       {/* <Card /> */}
     </ThemeContext.Provider>
