@@ -11,7 +11,7 @@ code {
     monospace;
 }
 
-@tailwind base;
+@tailwind base; 
 @tailwind components;
 @tailwind utilities;
 
@@ -28,10 +28,10 @@ code {
     background-color: #a5b4fc;
     width: 5px;
     border-radius: 10px;
-  }
+  } 
 
   .custom-scrollbar-dark::-webkit-scrollbar-thumb {
     background-color: #312e81;
   } 
-}
+}    
 

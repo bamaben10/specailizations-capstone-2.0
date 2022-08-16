@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { mockSearchResults } from "../constants/mock";
 import "./Search.css";
 import { XIcon, SearchIcon } from "@heroicons/react/solid";
 import SearchResults from "./SearchResults";
+import ThemeContext from "../context/ThemeContext";
 
 const Search = () => {
   const [input, setInput] = useState(""); //this input will track the user query (what company/stock they are looking for)
   const [bestMatches, setBestMatches] = useState(mockSearchResults.result);
+
+  const { darkMode } = useContext(ThemeContext);
 
   const clear = () => {
     setInput("");

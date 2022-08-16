@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
+import ThemeContext from "../context/ThemeContext";
 
 const SearchResults = ({ results }) => {
+  const { darkMode } = useContext(ThemeContext);
   return (
     <ul className="search-options" custom-scrollbar>
       {results.map((item) => {

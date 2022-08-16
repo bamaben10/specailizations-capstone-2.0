@@ -1,13 +1,17 @@
+import React, { useState } from "react";
 import "./App.css";
-import Card from "./components/Card";
+// import Card from "./components/Card";
 import Dashboard from "./components/Dashboard";
+import ThemeContext from "./context/ThemeContext";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
   return (
-    <div className="app">
-      <Card />
+    <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
       <Dashboard />
-    </div>
+      {/* <App /> */}
+      {/* <Card /> */}
+    </ThemeContext.Provider>
   );
 }
 

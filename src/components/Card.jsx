@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Card.css";
+import ThemeContext from "../context/ThemeContext";
 
 const Card = ({ children }) => {
-  console.log(children);
-  return <div className="parent">{children}</div>;
+  const { darkMode } = useContext(ThemeContext);
+  return <div className={"parent"}>{children}</div>;
 };
 
 export default Card;

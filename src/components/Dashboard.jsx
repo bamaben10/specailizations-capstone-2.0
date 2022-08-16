@@ -6,8 +6,10 @@ import Header from "./Header";
 import Details from "./Details";
 import Overview from "./Overview";
 import Chart from "./Chart";
+// import ThemeContext from "../context/ThemeContext";
 
 const Dashboard = () => {
+  // const { darkMode } = useContext(ThemeContext);
   return (
     <div className="chart">
       <div className="header-card">

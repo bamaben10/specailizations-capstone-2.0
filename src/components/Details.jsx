@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
+import ThemeContext from "../context/ThemeContext";
 import Card from "./Card";
 import "./Details.css";
 
 const Details = ({ details }) => {
+  const { darkMode } = useContext(ThemeContext);
   const detailsList = {
     name: "Name",
     country: "Country",
-    shareOutstanding: "Shares Outstanding",
+    ipo: "IPO Date",
     exchange: "Exchange",
     marketCapitalization: "Market Capitalization",
     finnhubIndustry: "Industry",
