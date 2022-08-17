@@ -3,6 +3,7 @@ import "./Search.css";
 import { XIcon, SearchIcon } from "@heroicons/react/solid";
 import SearchResults from "./SearchResults";
 import ThemeContext from "../context/ThemeContext";
+import StockContext from "../context/StockContext";
 import { searchSymbols, fetchStockSymbols, fetchQuote } from "../api/stock-api";
 
 const Search = () => {
@@ -11,6 +12,8 @@ const Search = () => {
   const [stock, setStock] = useState({});
 
   const { darkMode } = useContext(ThemeContext);
+  const { setStockSymbol } = useContext(StockContext);
+
   useEffect(() => {
     getStockQuote();
   }, [bestMatches]);
@@ -24,7 +27,7 @@ const Search = () => {
     try {
       if (input) {
         const searchResults = await searchSymbols(input);
-        // const result = searchResults;
+        setStockSymbol(input);
         await setBestMatches(searchResults[0]);
       }
     } catch (error) {

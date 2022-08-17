@@ -6,7 +6,7 @@ import Overview from "./Overview";
 import Chart from "./Chart";
 import ThemeContext from "../context/ThemeContext";
 import StockContext from "../context/StockContext";
-import { fetchQuote, fetchStockDetails } from "../api/stock-api";
+import { fetchQuote, fetchStockDetails, searchSymbols } from "../api/stock-api";
 
 const Dashboard = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -19,6 +19,7 @@ const Dashboard = () => {
     const updateStockDetails = async () => {
       try {
         const result = await fetchStockDetails(stockSymbol);
+        console.log(result);
         setStockDetails(result);
       } catch (error) {
         setStockDetails({});
@@ -27,7 +28,8 @@ const Dashboard = () => {
     };
     const updateStockOverview = async () => {
       try {
-        const result = await fetchQuote(stockSymbol);
+        const result = await fetchQuote({ symbol: stockSymbol });
+        console.log(result);
         setQuote(result);
       } catch (error) {
         setQuote({});
@@ -36,7 +38,7 @@ const Dashboard = () => {
     };
 
     updateStockDetails();
-    updateStockDetails();
+    updateStockOverview();
   }, [stockSymbol]);
 
   return (
