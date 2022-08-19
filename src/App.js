@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
-// import Card from "./components/Card";
 import Dashboard from "./components/Dashboard";
 import ThemeContext from "./context/ThemeContext";
 import StockContext from "./context/StockContext";
-// import api from "./api";
 
 const stockArr = ["TSLA", "NFLX", "GME", "BBBY", "AMZN"];
 const starterStock = stockArr[Math.floor(Math.random() * stockArr.length)];
@@ -17,8 +15,6 @@ function App() {
       <StockContext.Provider value={{ stockSymbol, setStockSymbol }}>
         <Dashboard />
       </StockContext.Provider>
-      {/* <App /> */}
-      {/* <Card /> */}
     </ThemeContext.Provider>
   );
 }

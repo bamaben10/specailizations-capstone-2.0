@@ -1,17 +1,14 @@
 import React, { useState, useContext, useEffect } from "react";
 import "./Search.css";
 import { XIcon, SearchIcon } from "@heroicons/react/solid";
-import SearchResults from "./SearchResults";
-import ThemeContext from "../context/ThemeContext";
 import StockContext from "../context/StockContext";
-import { searchSymbols, fetchStockSymbols, fetchQuote } from "../api/stock-api";
+import { searchSymbols, fetchQuote } from "../api/stock-api";
 
 const Search = () => {
   const [input, setInput] = useState(""); //this input will track the user query (what company/stock they are looking for)
   const [bestMatches, setBestMatches] = useState({});
   const [stock, setStock] = useState({});
 
-  const { darkMode } = useContext(ThemeContext);
   const { setStockSymbol } = useContext(StockContext);
 
   useEffect(() => {
@@ -72,10 +69,6 @@ const Search = () => {
       <button onClick={() => updateBestMatches()} className="search-icon-1">
         <SearchIcon className="search-icon" />
       </button>
-
-      {/* {input && bestMatches.length > 0 ? (
-        <SearchResults results={bestMatches} />
-      ) : null} */}
     </div>
   );
 };

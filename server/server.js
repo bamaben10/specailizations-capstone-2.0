@@ -6,7 +6,6 @@ const app = express();
 
 require("dotenv").config();
 const { DATABASE_URL } = process.env;
-// const { Sequelize } = require("sequelize");
 
 const controllerFile = require("./controller");
 

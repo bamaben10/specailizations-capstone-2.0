@@ -26,18 +26,6 @@ export const fetchStockDetails = async (stockSymbol) => {
   return await response.json();
 };
 
-// export const fetchStockSymbols = async (stockSymbol) => {
-//   const url = `${basePath}/stock/profile2?symbol=${stockSymbol}&token=${process.env.REACT_APP_API_KEY}`;
-//   const response = await fetch(url);
-
-//   if (!response.ok) {
-//     const message = `An error has occured: ${response.status}`;
-//     throw new Error(message);
-//   }
-
-//   return await response.json();
-// };
-
 export const fetchQuote = async (stockSymbol) => {
   const url = `${basePath}/quote?symbol=${stockSymbol.symbol}&token=${process.env.REACT_APP_API_KEY}`;
   console.log(stockSymbol.symbol);
