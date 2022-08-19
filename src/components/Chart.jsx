@@ -71,7 +71,7 @@ const Chart = () => {
   }, [stockSymbol, filter]);
 
   return (
-    <Card>
+    <Card className="chart-card">
       <ul className="box">
         {Object.keys(chartConfig).map((item) => (
           <li key={item}>

@@ -7,6 +7,8 @@ import Chart from "./Chart";
 import ThemeContext from "../context/ThemeContext";
 import StockContext from "../context/StockContext";
 import { fetchQuote, fetchStockDetails, searchSymbols } from "../api/stock-api";
+import Card from "./Card";
+import Watchlist from "./Watchlist/AddStock";
 
 const Dashboard = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -32,7 +34,7 @@ const Dashboard = () => {
         console.log(result);
         setQuote(result);
       } catch (error) {
-        setQuote({});
+        // setQuote({});
         console.log(error);
       }
     };
@@ -63,7 +65,9 @@ const Dashboard = () => {
           <div className="details-card">
             <Details details={stockDetails} />
           </div>
-          {/* <div className="news-card"><Card>News</Card></div> */}
+          <div className="watchlist-card">
+            <Watchlist>Watchlist</Watchlist>
+          </div>
         </div>
       </div>
     </div>

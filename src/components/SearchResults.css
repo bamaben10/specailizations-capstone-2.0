@@ -1,6 +1,5 @@
 .search-options {
-    overflow-y: scroll; 
-    position: absolute; 
+    overflow-y: scroll;  
     top: 3rem; 
     background-color: #ffffff; 
     width: 100%; 

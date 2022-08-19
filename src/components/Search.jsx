@@ -27,11 +27,12 @@ const Search = () => {
     try {
       if (input) {
         const searchResults = await searchSymbols(input);
-        setStockSymbol(input);
+        setStockSymbol(input.toUpperCase());
+        console.log(searchResults[0]);
         await setBestMatches(searchResults[0]);
       }
     } catch (error) {
-      setBestMatches([]);
+      // setBestMatches([]);
       console.log(error);
     }
   };
@@ -44,7 +45,7 @@ const Search = () => {
   //   await updateBestMatches();
   //   await getStockQuote();
   // };
-  console.log(stock);
+  // console.log(stock);
 
   return (
     <div className="search-container">

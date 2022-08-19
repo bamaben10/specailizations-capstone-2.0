@@ -7,8 +7,9 @@ const Header = ({ name }) => {
   return (
     <>
       <div className="header-container">
-        <h1 className="header-card">{name}</h1>
         <Search />
+        <h1 className="header-card">{name}</h1>
+        <div />
       </div>
       <ThemeIcon />
     </>

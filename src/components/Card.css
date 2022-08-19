@@ -1,6 +1,6 @@
-.parent {
+.card-container {
     position: relative;
-    padding: 3rem 2rem 0rem 0rem;
+    padding: 20px;
     background-color: #ffffff;
     width:100%;
     height: 100%;

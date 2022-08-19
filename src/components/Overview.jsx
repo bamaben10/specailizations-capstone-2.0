@@ -5,23 +5,13 @@ import "./Overview.css";
 const Overview = ({ symbol, price, change, changePercent, currency }) => {
   // console.log(symbol);
   return (
-    <Card>
-      <span className="overview-info">
-        {symbol}
-        <div className="overview-look">
-          <span className="overview">
-            ${price}
-            <span>{currency}</span>
-          </span>
-          <span
-            className={`text-lg xl:text-xl 2xl:text-2xl ${
-              change > 0 ? "text-lime-500" : "text-red-500"
-            }`}
-          >
-            {change} <span>({changePercent}%)</span>
-          </span>
-        </div>
-      </span>
+    <Card className="overview-card">
+      <div>{symbol}</div>
+      <div>${price}</div>
+      <div>{currency}</div>
+      <div>
+        {change} ({changePercent}%)
+      </div>
     </Card>
   );
 };

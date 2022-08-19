@@ -1,9 +1,9 @@
 .overview-info {
-    position: absolute;
+    display: flex;
+    flex-direction: column;
     top: 1rem;
     left: 1rem;
     font-size: 1.125rem;
-    line-height: 1.75rem;
     line-height: 2rem;
 }
 
@@ -19,4 +19,8 @@
     font-size: 1.5rem;
     line-height: 2rem;
     align-items: center;
+}
+
+.overview-card div {
+    font-size: 20px;
 }

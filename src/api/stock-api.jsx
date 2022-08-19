@@ -40,7 +40,7 @@ export const fetchStockDetails = async (stockSymbol) => {
 
 export const fetchQuote = async (stockSymbol) => {
   const url = `${basePath}/quote?symbol=${stockSymbol.symbol}&token=${process.env.REACT_APP_API_KEY}`;
-
+  console.log(stockSymbol.symbol);
   const response = await fetch(url);
 
   if (!response.ok) {
